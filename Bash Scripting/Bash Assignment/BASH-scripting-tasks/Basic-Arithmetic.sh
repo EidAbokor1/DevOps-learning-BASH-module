@@ -3,8 +3,8 @@
 # Basic Arithmetic: 
 # Write a script that takes two numbers as input from the user and performs basic arithmetic operations (addition, subtraction, multiplication, and division) and then displays all the answers of those operations in the terminal. 
 
-read -p "1st Number: " num1
-read -p "2nd Number: " num2
+read -p "Input 1st Number: " num1
+read -p "Input 2nd Number: " num2
 
 
 addition=$(($num1 + $num2))
