@@ -302,3 +302,67 @@ Why: The set command changes how Bash behaves — helpful for error handling, de
 | `-u`          | Exit if you use **undefined variables**                               |
 | `-x`          | **Print every command** before running (great for **debugging**)      |
 | `-o pipefail` | Causes pipeline to fail if **any part** fails (not just the last one) |
+
+## 🔎 20. Common Test Conditions (`[ ]`)
+
+```bash
+# File and directory tests
+if [ -f "file.txt" ]; then   # True if "file.txt" exists and is a regular file
+  echo "File exists"
+fi
+
+if [ -d "/tmp" ]; then       # True if /tmp is a directory
+  echo "Directory exists"
+fi
+
+# File permission tests
+if [ -r "file.txt" ]; then   # True if file is readable
+  echo "File is readable"
+fi
+
+if [ -w "file.txt" ]; then   # True if file is writable
+  echo "File is writable"
+fi
+
+if [ -x "script.sh" ]; then  # True if file is executable
+  echo "File is executable"
+fi
+
+# String tests
+if [ "$a" = "$b" ]; then     # True if strings are equal
+  echo "Strings match"
+fi
+
+if [ -z "$var" ]; then       # True if string is empty
+  echo "String is empty"
+fi
+
+# Integer tests
+if [ "$x" -gt 10 ]; then     # True if x > 10
+  echo "x is greater than 10"
+fi
+```
+
+When: You need to test files, strings, or numbers in conditional expressions.
+
+Why: The test command ([ ]) is the backbone of decision-making in Bash scripts.
+
+| Test Condition      | Description                                    |
+|---------------------|------------------------------------------------|
+| `-f file`           | True if file exists and is a regular file      |
+| `-d dir`            | True if directory exists                        |
+| `-r file`           | True if file is readable                        |
+| `-w file`           | True if file is writable                        |
+| `-x file`           | True if file is executable                      |
+| `-e file`           | True if file or directory exists                |
+| `string1 = string2` | True if strings are equal                        |
+| `string1 != string2`| True if strings are not equal                    |
+| `-z string`         | True if string is empty                          |
+| `-n string`         | True if string is not empty                      |
+| `int1 -eq int2`     | True if integers are equal                       |
+| `int1 -ne int2`     | True if integers are not equal                   |
+| `int1 -gt int2`     | True if int1 is greater than int2                |
+| `int1 -lt int2`     | True if int1 is less than int2                   |
+| `int1 -ge int2`     | True if int1 is greater than or equal to int2   |
+| `int1 -le int2`     | True if int1 is less than or equal to int2      |
+
